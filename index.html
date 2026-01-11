@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+
+  <title>Contact form</title>
+</head>
+
+<body>
+  <main>
+    <section class="contact-section">
+      <header>
+        <h1>Contact Us</h1>
+      </header>
+      <form class="contact-form" action="/" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="first-name" name="first-name" required aria-describedby="first-name-error">
+            <span id="first-name-error" class="error-message">This field is required</span>
+          </div>
+
+          <div class="form-group">
+            <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="last-name" name="last-name" required aria-describedby="last-name-error">
+            <span id="last-name-error" class="error-message">This field is required</span>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="email">Email Address <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required aria-describedby="email-error">
+          <span id="email-error" class="error-message">Please enter a valid email address</span>
+        </div>
+
+        <fieldset class="form-group">
+          <legend>
+            Query Type <span aria-hidden="true">*</span>
+          </legend>
+
+          <div class="query-options">
+            <label class="radio-option">
+              <input type="radio" id="query-general" name="query-type" value="general" required
+                aria-describedby="query-type-error">
+              <span class="radio-text">General Enquiry</span>
+            </label>
+
+
+            <label class="radio-option">
+              <input type="radio" id="query-support" name="query-type" value="support" required
+                aria-describedby="query-type-error">
+              <span class="radio-text">Support Request</span>
+            </label>
+          </div>
+
+          <span id="query-type-error" class="error-message" aria-live="polite">
+            Please select a query type
+          </span>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+          <span id="message-error" class="error-message">This field is required</span>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="consent" name="consent" required aria-describedby="consent-error">
+            <label for="consent">I consent to being contacted by the team <span aria-hidden="true">*</span></label>
+          </div>
+          <span id="consent-error" class="error-message">To submit this form, please consent to being contacted</span>
+        </div>
+
+        <button type="submit">Submit</button>
+
+      </form>
+
+    </section>
+
+    <div class="success-toast">
+      <header class="success-message">
+        <img src="./assets/images/icon-success-check.svg" alt="">
+        <h2>Message Sent!</h2>
+      </header>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </div>
+  </main>
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

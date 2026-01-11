@@ -1,0 +1,197 @@
+body {
+    font-family:
+        "Karla",
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0f1e7;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.contact-section {
+    background-color: #ffffff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+span[aria-hidden="true"] {
+    color: #0c7d69;
+}
+
+.contact-section h1 {
+    margin-top: 0;
+}
+
+input,
+textarea {
+    font: inherit;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.query-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+input[type="radio"] {
+    accent-color: #0c7d69;
+}
+
+textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type="checkbox"] {
+    accent-color: #0c7d69;
+}
+
+button {
+    background-color: #0c7d69;
+    color: #ffffff;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.8em;
+}
+
+.form-group:has(:invalid) .error-message,
+fieldset:has(:invalid) .error-message {
+    display: block;
+}
+
+input:hover,
+textarea:hover {
+    border-color: #0c7d69;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline-color: #0c7d69;
+}
+
+.radio-option:has(:checked) {
+    border-color: #0c7d69;
+    background-color: #e0f1e7;
+}
+
+button:hover {
+    background-color: #0a5d4f;
+}
+
+.success-toast {
+    position: fixed;
+    left: 50%;
+    top: 1.5rem;
+    transform: translateX(-50%) translateY(10px);
+    min-width: 280px;
+    max-width: calc(100% - 2rem);
+
+    background-color: #2a4244;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.success-toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.success-message {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    line-height: 1.4;
+}
+
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .query-options {
+        grid-template-columns: 1fr;
+    }
+
+    .radio-option {
+        padding: 1rem;
+    }
+}
+
+@media (max-height: 700px) {
+    body {
+        align-items: flex-start;
+        padding: 1rem;
+    }
+}
